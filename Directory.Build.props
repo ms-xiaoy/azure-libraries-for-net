@@ -27,15 +27,19 @@
   </PropertyGroup>
 
   <PropertyGroup>
-    <FluentVersion>1.38.1</FluentVersion>
+    <FluentVersion>1.38.3</FluentVersion>
     <VersionPrefix>$(FluentVersion)</VersionPrefix>
 
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
-    <PackageOutputPath>$(SolutionDir)Packages</PackageOutputPath>
+    <PackageOutputPath>$(SolutionDir)packages</PackageOutputPath>
 
     <!-- Always update AssemblyVersion for new release -->
     <AssemblyVersion>1.0.0.71</AssemblyVersion>
   </PropertyGroup>
+
+  <Target Name="PostBuild" AfterTargets="PostBuildEvent">
+    <Exec Command="xcopy /y $(OutDir)*.* $(SolutionDir)output" />
+  </Target>
   
   <PropertyGroup>
     <DefaultPathTokenToIgnore>$(DefaultPathTokenToIgnore) restoredPackages</DefaultPathTokenToIgnore>

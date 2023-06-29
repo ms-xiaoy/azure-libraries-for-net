@@ -1,0 +1,16 @@
+## 1. update code
+## 2. update Directory.Build.props
+##  <PropertyGroup>
+##    <FluentVersion>1.38.3</FluentVersion>
+##    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+##    <PackageOutputPath>$(SolutionDir)packages</PackageOutputPath>
+##  </PropertyGroup>
+##  <Target Name="PostBuild" AfterTargets="PostBuildEvent">
+##    <Exec Command="xcopy /y $(OutDir)*.* $(SolutionDir)output" />
+##  </Target>
+## 3. update NuGet.Config
+##	add	<add key="CognitiveServices" value="https://msazure.pkgs.visualstudio.com/_packaging/CognitiveServices/nuget/v3/index.json" />
+## 4. open Develop Command Prompt for Visual Studio in solution folder, run following cmd in repo root folder
+##    no need to add '-t:pack' since already added property <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+msbuild Fluent.SDK.sln
+nuget.exe push -Source "CognitiveServices" -ApiKey az .\Packages\*.nupkg -Timeout 3000
