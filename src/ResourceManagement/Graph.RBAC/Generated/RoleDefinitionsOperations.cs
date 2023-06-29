@@ -89,7 +89,7 @@ namespace Microsoft.Azure.Management.Graph.RBAC.Fluent
             {
                 throw new ValidationException(ValidationRules.CannotBeNull, "roleDefinitionId");
             }
-            string apiVersion = "2018-01-01-preview";
+
             // Tracing
             bool _shouldTrace = ServiceClientTracing.IsEnabled;
             string _invocationId = null;
@@ -99,7 +99,7 @@ namespace Microsoft.Azure.Management.Graph.RBAC.Fluent
                 Dictionary<string, object> tracingParameters = new Dictionary<string, object>();
                 tracingParameters.Add("scope", scope);
                 tracingParameters.Add("roleDefinitionId", roleDefinitionId);
-                tracingParameters.Add("apiVersion", apiVersion);
+                tracingParameters.Add("apiVersion", Client.ApiVersionForRoleDefinitions);
                 tracingParameters.Add("cancellationToken", cancellationToken);
                 ServiceClientTracing.Enter(_invocationId, this, "Delete", tracingParameters);
             }
@@ -109,9 +109,9 @@ namespace Microsoft.Azure.Management.Graph.RBAC.Fluent
             _url = _url.Replace("{scope}", scope);
             _url = _url.Replace("{roleDefinitionId}", System.Uri.EscapeDataString(roleDefinitionId));
             List<string> _queryParameters = new List<string>();
-            if (apiVersion != null)
+            if (Client.ApiVersionForRoleDefinitions != null)
             {
-                _queryParameters.Add(string.Format("api-version={0}", System.Uri.EscapeDataString(apiVersion)));
+                _queryParameters.Add(string.Format("api-version={0}", System.Uri.EscapeDataString(Client.ApiVersionForRoleDefinitions)));
             }
             if (_queryParameters.Count > 0)
             {
@@ -139,7 +139,7 @@ namespace Microsoft.Azure.Management.Graph.RBAC.Fluent
 
             if (customHeaders != null)
             {
-                foreach(var _header in customHeaders)
+                foreach (var _header in customHeaders)
                 {
                     if (_httpRequest.Headers.Contains(_header.Key))
                     {
@@ -177,7 +177,7 @@ namespace Microsoft.Azure.Management.Graph.RBAC.Fluent
                 try
                 {
                     _responseContent = await _httpResponse.Content.ReadAsStringAsync().ConfigureAwait(false);
-                    CloudError _errorBody =  Rest.Serialization.SafeJsonConvert.DeserializeObject<CloudError>(_responseContent, Client.DeserializationSettings);
+                    CloudError _errorBody = Rest.Serialization.SafeJsonConvert.DeserializeObject<CloudError>(_responseContent, Client.DeserializationSettings);
                     if (_errorBody != null)
                     {
                         ex = new CloudException(_errorBody.Message);
@@ -278,7 +278,7 @@ namespace Microsoft.Azure.Management.Graph.RBAC.Fluent
             {
                 throw new ValidationException(ValidationRules.CannotBeNull, "roleDefinitionId");
             }
-            string apiVersion = "2018-01-01-preview";
+
             // Tracing
             bool _shouldTrace = ServiceClientTracing.IsEnabled;
             string _invocationId = null;
@@ -288,7 +288,7 @@ namespace Microsoft.Azure.Management.Graph.RBAC.Fluent
                 Dictionary<string, object> tracingParameters = new Dictionary<string, object>();
                 tracingParameters.Add("scope", scope);
                 tracingParameters.Add("roleDefinitionId", roleDefinitionId);
-                tracingParameters.Add("apiVersion", apiVersion);
+                tracingParameters.Add("apiVersion", Client.ApiVersionForRoleDefinitions);
                 tracingParameters.Add("cancellationToken", cancellationToken);
                 ServiceClientTracing.Enter(_invocationId, this, "Get", tracingParameters);
             }
@@ -298,9 +298,9 @@ namespace Microsoft.Azure.Management.Graph.RBAC.Fluent
             _url = _url.Replace("{scope}", scope);
             _url = _url.Replace("{roleDefinitionId}", System.Uri.EscapeDataString(roleDefinitionId));
             List<string> _queryParameters = new List<string>();
-            if (apiVersion != null)
+            if (Client.ApiVersionForRoleDefinitions != null)
             {
-                _queryParameters.Add(string.Format("api-version={0}", System.Uri.EscapeDataString(apiVersion)));
+                _queryParameters.Add(string.Format("api-version={0}", System.Uri.EscapeDataString(Client.ApiVersionForRoleDefinitions)));
             }
             if (_queryParameters.Count > 0)
             {
@@ -328,7 +328,7 @@ namespace Microsoft.Azure.Management.Graph.RBAC.Fluent
 
             if (customHeaders != null)
             {
-                foreach(var _header in customHeaders)
+                foreach (var _header in customHeaders)
                 {
                     if (_httpRequest.Headers.Contains(_header.Key))
                     {
@@ -366,7 +366,7 @@ namespace Microsoft.Azure.Management.Graph.RBAC.Fluent
                 try
                 {
                     _responseContent = await _httpResponse.Content.ReadAsStringAsync().ConfigureAwait(false);
-                    CloudError _errorBody =  Rest.Serialization.SafeJsonConvert.DeserializeObject<CloudError>(_responseContent, Client.DeserializationSettings);
+                    CloudError _errorBody = Rest.Serialization.SafeJsonConvert.DeserializeObject<CloudError>(_responseContent, Client.DeserializationSettings);
                     if (_errorBody != null)
                     {
                         ex = new CloudException(_errorBody.Message);
@@ -474,7 +474,7 @@ namespace Microsoft.Azure.Management.Graph.RBAC.Fluent
             {
                 throw new ValidationException(ValidationRules.CannotBeNull, "roleDefinition");
             }
-            string apiVersion = "2018-01-01-preview";
+
             // Tracing
             bool _shouldTrace = ServiceClientTracing.IsEnabled;
             string _invocationId = null;
@@ -485,7 +485,7 @@ namespace Microsoft.Azure.Management.Graph.RBAC.Fluent
                 tracingParameters.Add("scope", scope);
                 tracingParameters.Add("roleDefinitionId", roleDefinitionId);
                 tracingParameters.Add("roleDefinition", roleDefinition);
-                tracingParameters.Add("apiVersion", apiVersion);
+                tracingParameters.Add("apiVersion", Client.ApiVersionForRoleDefinitions);
                 tracingParameters.Add("cancellationToken", cancellationToken);
                 ServiceClientTracing.Enter(_invocationId, this, "CreateOrUpdate", tracingParameters);
             }
@@ -495,9 +495,9 @@ namespace Microsoft.Azure.Management.Graph.RBAC.Fluent
             _url = _url.Replace("{scope}", scope);
             _url = _url.Replace("{roleDefinitionId}", System.Uri.EscapeDataString(roleDefinitionId));
             List<string> _queryParameters = new List<string>();
-            if (apiVersion != null)
+            if (Client.ApiVersionForRoleDefinitions != null)
             {
-                _queryParameters.Add(string.Format("api-version={0}", System.Uri.EscapeDataString(apiVersion)));
+                _queryParameters.Add(string.Format("api-version={0}", System.Uri.EscapeDataString(Client.ApiVersionForRoleDefinitions)));
             }
             if (_queryParameters.Count > 0)
             {
@@ -525,7 +525,7 @@ namespace Microsoft.Azure.Management.Graph.RBAC.Fluent
 
             if (customHeaders != null)
             {
-                foreach(var _header in customHeaders)
+                foreach (var _header in customHeaders)
                 {
                     if (_httpRequest.Headers.Contains(_header.Key))
                     {
@@ -537,11 +537,11 @@ namespace Microsoft.Azure.Management.Graph.RBAC.Fluent
 
             // Serialize Request
             string _requestContent = null;
-            if(roleDefinition != null)
+            if (roleDefinition != null)
             {
                 _requestContent = Rest.Serialization.SafeJsonConvert.SerializeObject(roleDefinition, Client.SerializationSettings);
                 _httpRequest.Content = new StringContent(_requestContent, System.Text.Encoding.UTF8);
-                _httpRequest.Content.Headers.ContentType =System.Net.Http.Headers.MediaTypeHeaderValue.Parse("application/json; charset=utf-8");
+                _httpRequest.Content.Headers.ContentType = System.Net.Http.Headers.MediaTypeHeaderValue.Parse("application/json; charset=utf-8");
             }
             // Set Credentials
             if (Client.Credentials != null)
@@ -569,7 +569,7 @@ namespace Microsoft.Azure.Management.Graph.RBAC.Fluent
                 try
                 {
                     _responseContent = await _httpResponse.Content.ReadAsStringAsync().ConfigureAwait(false);
-                    CloudError _errorBody =  Rest.Serialization.SafeJsonConvert.DeserializeObject<CloudError>(_responseContent, Client.DeserializationSettings);
+                    CloudError _errorBody = Rest.Serialization.SafeJsonConvert.DeserializeObject<CloudError>(_responseContent, Client.DeserializationSettings);
                     if (_errorBody != null)
                     {
                         ex = new CloudException(_errorBody.Message);
@@ -666,7 +666,7 @@ namespace Microsoft.Azure.Management.Graph.RBAC.Fluent
             {
                 throw new ValidationException(ValidationRules.CannotBeNull, "scope");
             }
-            string apiVersion = "2018-01-01-preview";
+
             // Tracing
             bool _shouldTrace = ServiceClientTracing.IsEnabled;
             string _invocationId = null;
@@ -676,7 +676,7 @@ namespace Microsoft.Azure.Management.Graph.RBAC.Fluent
                 Dictionary<string, object> tracingParameters = new Dictionary<string, object>();
                 tracingParameters.Add("odataQuery", odataQuery);
                 tracingParameters.Add("scope", scope);
-                tracingParameters.Add("apiVersion", apiVersion);
+                tracingParameters.Add("apiVersion", Client.ApiVersionForRoleDefinitions);
                 tracingParameters.Add("cancellationToken", cancellationToken);
                 ServiceClientTracing.Enter(_invocationId, this, "List", tracingParameters);
             }
@@ -693,9 +693,9 @@ namespace Microsoft.Azure.Management.Graph.RBAC.Fluent
                     _queryParameters.Add(_odataFilter);
                 }
             }
-            if (apiVersion != null)
+            if (Client.ApiVersionForRoleDefinitions != null)
             {
-                _queryParameters.Add(string.Format("api-version={0}", System.Uri.EscapeDataString(apiVersion)));
+                _queryParameters.Add(string.Format("api-version={0}", System.Uri.EscapeDataString(Client.ApiVersionForRoleDefinitions)));
             }
             if (_queryParameters.Count > 0)
             {
@@ -723,7 +723,7 @@ namespace Microsoft.Azure.Management.Graph.RBAC.Fluent
 
             if (customHeaders != null)
             {
-                foreach(var _header in customHeaders)
+                foreach (var _header in customHeaders)
                 {
                     if (_httpRequest.Headers.Contains(_header.Key))
                     {
@@ -761,7 +761,7 @@ namespace Microsoft.Azure.Management.Graph.RBAC.Fluent
                 try
                 {
                     _responseContent = await _httpResponse.Content.ReadAsStringAsync().ConfigureAwait(false);
-                    CloudError _errorBody =  Rest.Serialization.SafeJsonConvert.DeserializeObject<CloudError>(_responseContent, Client.DeserializationSettings);
+                    CloudError _errorBody = Rest.Serialization.SafeJsonConvert.DeserializeObject<CloudError>(_responseContent, Client.DeserializationSettings);
                     if (_errorBody != null)
                     {
                         ex = new CloudException(_errorBody.Message);
@@ -859,7 +859,7 @@ namespace Microsoft.Azure.Management.Graph.RBAC.Fluent
             {
                 throw new ValidationException(ValidationRules.CannotBeNull, "roleId");
             }
-            string apiVersion = "2018-01-01-preview";
+
             // Tracing
             bool _shouldTrace = ServiceClientTracing.IsEnabled;
             string _invocationId = null;
@@ -868,7 +868,7 @@ namespace Microsoft.Azure.Management.Graph.RBAC.Fluent
                 _invocationId = ServiceClientTracing.NextInvocationId.ToString();
                 Dictionary<string, object> tracingParameters = new Dictionary<string, object>();
                 tracingParameters.Add("roleId", roleId);
-                tracingParameters.Add("apiVersion", apiVersion);
+                tracingParameters.Add("apiVersion", Client.ApiVersionForRoleDefinitions);
                 tracingParameters.Add("cancellationToken", cancellationToken);
                 ServiceClientTracing.Enter(_invocationId, this, "GetById", tracingParameters);
             }
@@ -877,9 +877,9 @@ namespace Microsoft.Azure.Management.Graph.RBAC.Fluent
             var _url = new System.Uri(new System.Uri(_baseUrl + (_baseUrl.EndsWith("/") ? "" : "/")), "{roleId}").ToString();
             _url = _url.Replace("{roleId}", roleId);
             List<string> _queryParameters = new List<string>();
-            if (apiVersion != null)
+            if (Client.ApiVersionForRoleDefinitions != null)
             {
-                _queryParameters.Add(string.Format("api-version={0}", System.Uri.EscapeDataString(apiVersion)));
+                _queryParameters.Add(string.Format("api-version={0}", System.Uri.EscapeDataString(Client.ApiVersionForRoleDefinitions)));
             }
             if (_queryParameters.Count > 0)
             {
@@ -907,7 +907,7 @@ namespace Microsoft.Azure.Management.Graph.RBAC.Fluent
 
             if (customHeaders != null)
             {
-                foreach(var _header in customHeaders)
+                foreach (var _header in customHeaders)
                 {
                     if (_httpRequest.Headers.Contains(_header.Key))
                     {
@@ -945,7 +945,7 @@ namespace Microsoft.Azure.Management.Graph.RBAC.Fluent
                 try
                 {
                     _responseContent = await _httpResponse.Content.ReadAsStringAsync().ConfigureAwait(false);
-                    CloudError _errorBody =  Rest.Serialization.SafeJsonConvert.DeserializeObject<CloudError>(_responseContent, Client.DeserializationSettings);
+                    CloudError _errorBody = Rest.Serialization.SafeJsonConvert.DeserializeObject<CloudError>(_responseContent, Client.DeserializationSettings);
                     if (_errorBody != null)
                     {
                         ex = new CloudException(_errorBody.Message);
@@ -1080,7 +1080,7 @@ namespace Microsoft.Azure.Management.Graph.RBAC.Fluent
 
             if (customHeaders != null)
             {
-                foreach(var _header in customHeaders)
+                foreach (var _header in customHeaders)
                 {
                     if (_httpRequest.Headers.Contains(_header.Key))
                     {
@@ -1118,7 +1118,7 @@ namespace Microsoft.Azure.Management.Graph.RBAC.Fluent
                 try
                 {
                     _responseContent = await _httpResponse.Content.ReadAsStringAsync().ConfigureAwait(false);
-                    CloudError _errorBody =  Rest.Serialization.SafeJsonConvert.DeserializeObject<CloudError>(_responseContent, Client.DeserializationSettings);
+                    CloudError _errorBody = Rest.Serialization.SafeJsonConvert.DeserializeObject<CloudError>(_responseContent, Client.DeserializationSettings);
                     if (_errorBody != null)
                     {
                         ex = new CloudException(_errorBody.Message);

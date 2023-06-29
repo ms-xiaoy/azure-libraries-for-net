@@ -117,7 +117,7 @@ namespace Microsoft.Azure.Management.Graph.RBAC.Fluent
             {
                 throw new ValidationException(ValidationRules.CannotBeNull, "resourceName");
             }
-            string apiVersion = "2018-07-01-preview";
+            
             // Tracing
             bool _shouldTrace = ServiceClientTracing.IsEnabled;
             string _invocationId = null;
@@ -131,7 +131,7 @@ namespace Microsoft.Azure.Management.Graph.RBAC.Fluent
                 tracingParameters.Add("parentResourcePath", parentResourcePath);
                 tracingParameters.Add("resourceType", resourceType);
                 tracingParameters.Add("resourceName", resourceName);
-                tracingParameters.Add("apiVersion", apiVersion);
+                tracingParameters.Add("apiVersion", Client.ApiVersionForDenyAssignments);
                 tracingParameters.Add("cancellationToken", cancellationToken);
                 ServiceClientTracing.Enter(_invocationId, this, "ListForResource", tracingParameters);
             }
@@ -153,9 +153,9 @@ namespace Microsoft.Azure.Management.Graph.RBAC.Fluent
                     _queryParameters.Add(_odataFilter);
                 }
             }
-            if (apiVersion != null)
+            if (Client.ApiVersionForDenyAssignments != null)
             {
-                _queryParameters.Add(string.Format("api-version={0}", System.Uri.EscapeDataString(apiVersion)));
+                _queryParameters.Add(string.Format("api-version={0}", System.Uri.EscapeDataString(Client.ApiVersionForDenyAssignments)));
             }
             if (_queryParameters.Count > 0)
             {
@@ -322,7 +322,7 @@ namespace Microsoft.Azure.Management.Graph.RBAC.Fluent
             {
                 throw new ValidationException(ValidationRules.CannotBeNull, "resourceGroupName");
             }
-            string apiVersion = "2018-07-01-preview";
+            
             // Tracing
             bool _shouldTrace = ServiceClientTracing.IsEnabled;
             string _invocationId = null;
@@ -332,7 +332,7 @@ namespace Microsoft.Azure.Management.Graph.RBAC.Fluent
                 Dictionary<string, object> tracingParameters = new Dictionary<string, object>();
                 tracingParameters.Add("odataQuery", odataQuery);
                 tracingParameters.Add("resourceGroupName", resourceGroupName);
-                tracingParameters.Add("apiVersion", apiVersion);
+                tracingParameters.Add("apiVersion", Client.ApiVersionForDenyAssignments);
                 tracingParameters.Add("cancellationToken", cancellationToken);
                 ServiceClientTracing.Enter(_invocationId, this, "ListForResourceGroup", tracingParameters);
             }
@@ -350,9 +350,9 @@ namespace Microsoft.Azure.Management.Graph.RBAC.Fluent
                     _queryParameters.Add(_odataFilter);
                 }
             }
-            if (apiVersion != null)
+            if (Client.ApiVersionForDenyAssignments != null)
             {
-                _queryParameters.Add(string.Format("api-version={0}", System.Uri.EscapeDataString(apiVersion)));
+                _queryParameters.Add(string.Format("api-version={0}", System.Uri.EscapeDataString(Client.ApiVersionForDenyAssignments)));
             }
             if (_queryParameters.Count > 0)
             {
@@ -512,7 +512,7 @@ namespace Microsoft.Azure.Management.Graph.RBAC.Fluent
             {
                 throw new ValidationException(ValidationRules.CannotBeNull, "this.Client.SubscriptionId");
             }
-            string apiVersion = "2018-07-01-preview";
+            
             // Tracing
             bool _shouldTrace = ServiceClientTracing.IsEnabled;
             string _invocationId = null;
@@ -521,7 +521,7 @@ namespace Microsoft.Azure.Management.Graph.RBAC.Fluent
                 _invocationId = ServiceClientTracing.NextInvocationId.ToString();
                 Dictionary<string, object> tracingParameters = new Dictionary<string, object>();
                 tracingParameters.Add("odataQuery", odataQuery);
-                tracingParameters.Add("apiVersion", apiVersion);
+                tracingParameters.Add("apiVersion", Client.ApiVersionForDenyAssignments);
                 tracingParameters.Add("cancellationToken", cancellationToken);
                 ServiceClientTracing.Enter(_invocationId, this, "List", tracingParameters);
             }
@@ -538,9 +538,9 @@ namespace Microsoft.Azure.Management.Graph.RBAC.Fluent
                     _queryParameters.Add(_odataFilter);
                 }
             }
-            if (apiVersion != null)
+            if (Client.ApiVersionForDenyAssignments != null)
             {
-                _queryParameters.Add(string.Format("api-version={0}", System.Uri.EscapeDataString(apiVersion)));
+                _queryParameters.Add(string.Format("api-version={0}", System.Uri.EscapeDataString(Client.ApiVersionForDenyAssignments)));
             }
             if (_queryParameters.Count > 0)
             {
@@ -707,7 +707,7 @@ namespace Microsoft.Azure.Management.Graph.RBAC.Fluent
             {
                 throw new ValidationException(ValidationRules.CannotBeNull, "denyAssignmentId");
             }
-            string apiVersion = "2018-07-01-preview";
+            
             // Tracing
             bool _shouldTrace = ServiceClientTracing.IsEnabled;
             string _invocationId = null;
@@ -717,7 +717,7 @@ namespace Microsoft.Azure.Management.Graph.RBAC.Fluent
                 Dictionary<string, object> tracingParameters = new Dictionary<string, object>();
                 tracingParameters.Add("scope", scope);
                 tracingParameters.Add("denyAssignmentId", denyAssignmentId);
-                tracingParameters.Add("apiVersion", apiVersion);
+                tracingParameters.Add("apiVersion", Client.ApiVersionForDenyAssignments);
                 tracingParameters.Add("cancellationToken", cancellationToken);
                 ServiceClientTracing.Enter(_invocationId, this, "Get", tracingParameters);
             }
@@ -727,9 +727,9 @@ namespace Microsoft.Azure.Management.Graph.RBAC.Fluent
             _url = _url.Replace("{scope}", scope);
             _url = _url.Replace("{denyAssignmentId}", System.Uri.EscapeDataString(denyAssignmentId));
             List<string> _queryParameters = new List<string>();
-            if (apiVersion != null)
+            if (Client.ApiVersionForDenyAssignments != null)
             {
-                _queryParameters.Add(string.Format("api-version={0}", System.Uri.EscapeDataString(apiVersion)));
+                _queryParameters.Add(string.Format("api-version={0}", System.Uri.EscapeDataString(Client.ApiVersionForDenyAssignments)));
             }
             if (_queryParameters.Count > 0)
             {
@@ -893,7 +893,7 @@ namespace Microsoft.Azure.Management.Graph.RBAC.Fluent
             {
                 throw new ValidationException(ValidationRules.CannotBeNull, "denyAssignmentId");
             }
-            string apiVersion = "2018-07-01-preview";
+            
             // Tracing
             bool _shouldTrace = ServiceClientTracing.IsEnabled;
             string _invocationId = null;
@@ -902,7 +902,7 @@ namespace Microsoft.Azure.Management.Graph.RBAC.Fluent
                 _invocationId = ServiceClientTracing.NextInvocationId.ToString();
                 Dictionary<string, object> tracingParameters = new Dictionary<string, object>();
                 tracingParameters.Add("denyAssignmentId", denyAssignmentId);
-                tracingParameters.Add("apiVersion", apiVersion);
+                tracingParameters.Add("apiVersion", Client.ApiVersionForDenyAssignments);
                 tracingParameters.Add("cancellationToken", cancellationToken);
                 ServiceClientTracing.Enter(_invocationId, this, "GetById", tracingParameters);
             }
@@ -911,9 +911,9 @@ namespace Microsoft.Azure.Management.Graph.RBAC.Fluent
             var _url = new System.Uri(new System.Uri(_baseUrl + (_baseUrl.EndsWith("/") ? "" : "/")), "{denyAssignmentId}").ToString();
             _url = _url.Replace("{denyAssignmentId}", denyAssignmentId);
             List<string> _queryParameters = new List<string>();
-            if (apiVersion != null)
+            if (Client.ApiVersionForDenyAssignments != null)
             {
-                _queryParameters.Add(string.Format("api-version={0}", System.Uri.EscapeDataString(apiVersion)));
+                _queryParameters.Add(string.Format("api-version={0}", System.Uri.EscapeDataString(Client.ApiVersionForDenyAssignments)));
             }
             if (_queryParameters.Count > 0)
             {
@@ -1076,7 +1076,7 @@ namespace Microsoft.Azure.Management.Graph.RBAC.Fluent
             {
                 throw new ValidationException(ValidationRules.CannotBeNull, "scope");
             }
-            string apiVersion = "2018-07-01-preview";
+            
             // Tracing
             bool _shouldTrace = ServiceClientTracing.IsEnabled;
             string _invocationId = null;
@@ -1086,7 +1086,7 @@ namespace Microsoft.Azure.Management.Graph.RBAC.Fluent
                 Dictionary<string, object> tracingParameters = new Dictionary<string, object>();
                 tracingParameters.Add("odataQuery", odataQuery);
                 tracingParameters.Add("scope", scope);
-                tracingParameters.Add("apiVersion", apiVersion);
+                tracingParameters.Add("apiVersion", Client.ApiVersionForDenyAssignments);
                 tracingParameters.Add("cancellationToken", cancellationToken);
                 ServiceClientTracing.Enter(_invocationId, this, "ListForScope", tracingParameters);
             }
@@ -1103,9 +1103,9 @@ namespace Microsoft.Azure.Management.Graph.RBAC.Fluent
                     _queryParameters.Add(_odataFilter);
                 }
             }
-            if (apiVersion != null)
+            if (Client.ApiVersionForDenyAssignments != null)
             {
-                _queryParameters.Add(string.Format("api-version={0}", System.Uri.EscapeDataString(apiVersion)));
+                _queryParameters.Add(string.Format("api-version={0}", System.Uri.EscapeDataString(Client.ApiVersionForDenyAssignments)));
             }
             if (_queryParameters.Count > 0)
             {

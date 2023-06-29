@@ -90,6 +90,14 @@ namespace Microsoft.Azure.Management.Graph.RBAC.Fluent
         /// </summary>
         public virtual IDenyAssignmentsOperations DenyAssignments { get; private set; }
 
+        public string ApiVersionForClassicAdministrator { get; private set; }
+        public string ApiVersionForGlobalAdministrator { get; private set; }
+        public string ApiVersionForProviderOperationsMetadata { get; private set; }
+        public string ApiVersionForRoleAssignments { get; private set; }
+        public string ApiVersionForPermissions { get; private set; }
+        public string ApiVersionForRoleDefinitions { get; private set; }
+        public string ApiVersionForDenyAssignments { get; private set; }
+
         /// <summary>
         /// Initializes a new instance of the AuthorizationManagementClient class.
         /// </summary>
@@ -98,6 +106,53 @@ namespace Microsoft.Azure.Management.Graph.RBAC.Fluent
         /// </exception>
         public AuthorizationManagementClient(RestClient restClient) : base(restClient)
         {
+            /// <summary>
+            /// https://learn.microsoft.com/en-us/rest/api/authorization/classic-administrators
+            /// </summary>
+            ApiVersionForClassicAdministrator = "2015-07-01";
+            /// <summary>
+            /// https://learn.microsoft.com/en-us/rest/api/authorization/global-administrator
+            /// </summary>
+            ApiVersionForGlobalAdministrator = "2015-07-01";
+            /// <summary>
+            /// https://learn.microsoft.com/en-us/rest/api/authorization/provider-operations-metadata
+            /// </summary>
+            ApiVersionForProviderOperationsMetadata = "2022-04-01";
+            /// <summary>
+            /// https://learn.microsoft.com/en-us/rest/api/authorization/role-assignments
+            /// </summary>
+            ApiVersionForRoleAssignments = "2022-04-01";
+            /// <summary>
+            /// https://learn.microsoft.com/en-us/rest/api/authorization/permissions
+            /// </summary>
+            ApiVersionForPermissions = "2022-04-01";
+            /// <summary>
+            /// https://learn.microsoft.com/en-us/rest/api/authorization/role-definitions
+            /// </summary>
+            ApiVersionForRoleDefinitions = "2022-04-01";
+            /// <summary>
+            /// https://learn.microsoft.com/en-us/rest/api/authorization/deny-assignments
+            /// </summary>
+            ApiVersionForDenyAssignments = "2022-04-01";
+        }
+
+        public AuthorizationManagementClient(RestClient restClient,
+            string apiVersionForClassicAdministrator = null,
+            string apiVersionForGlobalAdministrator = null,
+            string apiVersionForProviderOperationsMetadata = null,
+            string apiVersionForRoleAssignments = null,
+            string apiVersionForPermissions = null,
+            string apiVersionForRoleDefinitions = null,
+            string apiVersionForDenyAssignments = null
+            ) : this(restClient)
+        {
+            ApiVersionForClassicAdministrator = apiVersionForClassicAdministrator;
+            ApiVersionForGlobalAdministrator = apiVersionForGlobalAdministrator;
+            ApiVersionForProviderOperationsMetadata = apiVersionForProviderOperationsMetadata;
+            ApiVersionForRoleAssignments = apiVersionForRoleAssignments;
+            ApiVersionForPermissions = apiVersionForPermissions;
+            ApiVersionForRoleDefinitions = apiVersionForRoleDefinitions;
+            ApiVersionForDenyAssignments = apiVersionForDenyAssignments;
         }
 
         private AuthorizationManagementClient(RestClient restClient, System.Net.Http.HttpClient httpClient) : base(restClient, httpClient)
