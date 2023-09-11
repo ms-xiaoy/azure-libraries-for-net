@@ -27,7 +27,7 @@
   </PropertyGroup>
 
   <PropertyGroup>
-    <FluentVersion>1.38.3</FluentVersion>
+    <FluentVersion>1.38.4</FluentVersion>
     <VersionPrefix>$(FluentVersion)</VersionPrefix>
 
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>

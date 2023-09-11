@@ -11,15 +11,23 @@
     <PackageTags>Microsoft Azure Resource Manager;resource;Fluent</PackageTags>
   </PropertyGroup>
   <PropertyGroup>
-    <TargetFrameworks>net452;net461;netstandard1.4</TargetFrameworks>
+    <TargetFrameworks>net452;net461</TargetFrameworks>
   </PropertyGroup>
-
-  <ItemGroup>
-    <PackageReference Include="Microsoft.Rest.ClientRuntime.Azure.Authentication" Version="2.4.1" />
-  </ItemGroup>
 
   <ItemGroup Condition=" '$(TargetFramework)' == 'netstandard1.4' ">
     <PackageReference Include="System.Reflection.TypeExtensions" Version="4.3.0" />
     <PackageReference Include="System.Net.NetworkInformation" Version="4.3.0" />
+  </ItemGroup>
+
+  <ItemGroup Condition="'$(TargetFramework)' == 'net452'">
+    <PackageReference Include="Microsoft.Identity.Client">
+      <Version>4.56.0</Version>
+    </PackageReference>
+  </ItemGroup>
+
+  <ItemGroup Condition="'$(TargetFramework)' == 'net461'">
+    <PackageReference Include="Microsoft.Identity.Client">
+      <Version>4.56.0</Version>
+    </PackageReference>
   </ItemGroup>
 </Project>

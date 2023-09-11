@@ -13,4 +13,4 @@
 ## 4. open Develop Command Prompt for Visual Studio in solution folder, run following cmd in repo root folder
 ##    no need to add '-t:pack' since already added property <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
 msbuild Fluent.SDK.sln
-nuget.exe push -Source "CognitiveServices" -ApiKey az .\Packages\*.nupkg -Timeout 3000
+nuget.exe push -Source "CognitiveServices" -ApiKey az .\packages\*.nupkg -Timeout 3000

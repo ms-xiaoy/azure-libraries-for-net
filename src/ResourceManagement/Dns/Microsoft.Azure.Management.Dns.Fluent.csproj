@@ -12,7 +12,7 @@
   </PropertyGroup>
 
   <PropertyGroup>
-    <TargetFrameworks>net452;netstandard1.4</TargetFrameworks>
+    <TargetFrameworks>net452</TargetFrameworks>
   </PropertyGroup>
 
   <ItemGroup>
