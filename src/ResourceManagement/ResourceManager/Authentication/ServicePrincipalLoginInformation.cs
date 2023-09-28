@@ -18,8 +18,6 @@ namespace Microsoft.Azure.Management.ResourceManager.Fluent.Authentication
 
         public X509Certificate2 X509Certificate { get; set; }
 
-#if !NET45
         public bool IsCertificateRollOverEnabled { get; set; }
-#endif
     }
 }

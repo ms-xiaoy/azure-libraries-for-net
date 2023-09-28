@@ -149,3 +149,4 @@ build.out
 csx/
 *.GhostDoc.xml
 pingme.txt
+/output

@@ -1,17 +1,13 @@
 ﻿// Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License. See License.txt in the project root for license information.
 
-//using Microsoft.IdentityModel.Clients.ActiveDirectory;
 using Microsoft.Identity.Client;
 using Microsoft.Rest;
-//using Microsoft.Rest.Azure.Authentication;
 using System;
 using System.Collections.Concurrent;
 using System.Collections.Generic;
-using System.IdentityModel;
 using System.Linq;
 using System.Net.Http;
-using System.Net.Http.Headers;
 using System.Security.Cryptography.X509Certificates;
 using System.Text.RegularExpressions;
 using System.Threading;
@@ -165,11 +161,11 @@ namespace Microsoft.Azure.Management.ResourceManager.Fluent.Authentication
                     }
                     else if (servicePrincipalLoginInformation.X509Certificate != null)
                     {
-                        appBuilder.WithCertificate(servicePrincipalLoginInformation.X509Certificate);
+                        appBuilder.WithCertificate(servicePrincipalLoginInformation.X509Certificate, sendX5C: servicePrincipalLoginInformation.IsCertificateRollOverEnabled);
                     }
                     else if (servicePrincipalLoginInformation.Certificate != null)
                     {
-                        appBuilder.WithCertificate(new X509Certificate2(servicePrincipalLoginInformation.Certificate, servicePrincipalLoginInformation.CertificatePassword));
+                        appBuilder.WithCertificate(new X509Certificate2(servicePrincipalLoginInformation.Certificate, servicePrincipalLoginInformation.CertificatePassword), sendX5C: servicePrincipalLoginInformation.IsCertificateRollOverEnabled);
                     }
                     else
                     {
